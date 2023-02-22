@@ -1,0 +1,19 @@
+.btn {
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 2px 2px 2px 0px rgb(108, 108, 108);
+    background-color: rgb(167, 221, 246);
+}
+
+.btn:hover, 
+.btn:focus {
+    background-color:rgb(23, 148, 207) ;
+    color: #ffffff;
+}
+
+.btn:not(:last-child) {
+    margin-right: 10px;
+}
