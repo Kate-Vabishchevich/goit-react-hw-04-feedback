@@ -11,22 +11,18 @@ const Feedback = () => {
 
     const options = ['good', 'neutral', 'bad'];
 
-    const changeValue = value => value + 1;
-
     const onLeaveFeedback = e => {
-        const value = e.target.value;
-
-        switch (value) {
+        switch (e) {
             case 'good':
-                setGood(changeValue);
+                setGood(prevGood => prevGood + 1);
                 break;
             
             case 'neutral':
-                setNeutral(changeValue);
+                setNeutral(prevNeutral => prevNeutral + 1);
                 break;
             
             case 'bad':
-                setBad(changeValue);
+                setBad(prevBad => prevBad + 1);
                 break;
             
             default:
