@@ -34,7 +34,15 @@ const Feedback = () => {
     return good + neutral + bad;
   };
 
-  const result = Math.round((good / countTotalFeedback()) * 100);
+  const countPositiveFeedbackPercentage = () => {
+    const total = countTotalFeedback();
+    if (!total) {
+      return 0;
+    }
+    const result = Math.round((good / total) * 100);
+    return result;
+  };
+
   return (
     <div>
       <Section title="Please leave feedback">
@@ -53,7 +61,7 @@ const Feedback = () => {
             neutral={neutral}
             bad={bad}
             total={countTotalFeedback()}
-            positivePercentage={result}
+            positivePercentage={countPositiveFeedbackPercentage()}
           ></Statistics>
         </Section>
       )}
